@@ -82,6 +82,8 @@ export function useProgress(updateInterval?: number) {
     setState({ position, duration, buffered })
   }
 
+  getProgress()
+
   useEffect(() => {
     if (playerState !== State.Playing && playerState !== State.Buffering) return
     const poll = setInterval(getProgress, updateInterval || 1000)
